@@ -1,0 +1,30 @@
+/* 115211312 - Paulo Vitor Souto Dantas: LAB 06 - Turma 03 */
+package jogo;
+
+public class Luta extends Jogo{
+
+	public Luta(String nomeJogo, double precoJogo) throws Exception {
+		super(nomeJogo, precoJogo);
+	}
+
+
+	public int registraJogada(int store, boolean zerou) throws Exception {
+		if(store < 0) {
+			throw new Exception("O store nao pode ser negativo.");
+		}
+		super.qtdVezesJogadas += 1;
+		
+		if(zerou == true) {
+			super.qtdVezesZeradas += 1;
+		}
+		if(store > super.maiorStore) {
+			super.setMaiorStore(store);
+			
+			return store / 1000;
+		}
+				
+		return 0;
+	
+	}
+	
+}
